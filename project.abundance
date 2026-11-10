@@ -1,13 +1,270 @@
 {
-    "atomType": "Molecule",
-    "x": 0,
-    "y": 0,
-    "uniqueID": "id-483",
-    "name": "Aaron_Test",
-    "topLevel": true,
-    "allAtoms": [],
-    "allConnectors": [],
-    "unitsKey": "MM",
-    "fileTypeVersion": 1,
-    "filetypeVersion": 1
+  "atomType": "Molecule",
+  "x": 0,
+  "y": 0,
+  "uniqueID": "id-483",
+  "name": "Aaron_Test",
+  "topLevel": true,
+  "allAtoms": [
+    {
+      "atomType": "Output",
+      "x": 0.98,
+      "y": 0.5,
+      "uniqueID": "id-484",
+      "ioValues": [
+        {
+          "name": "number or geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Difference",
+      "x": 0.6192,
+      "y": 0.4845,
+      "uniqueID": "id-500",
+      "ioValues": [
+        {
+          "name": "retain",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "remove",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Rectangle",
+      "x": 0.5509,
+      "y": 0.8056,
+      "uniqueID": "id-504",
+      "ioValues": [
+        {
+          "name": "x length",
+          "ioValue": 1
+        },
+        {
+          "name": "y length",
+          "ioValue": 1
+        }
+      ]
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.4405,
+      "y": 0.6563,
+      "uniqueID": "id-518",
+      "name": "Rounded_Rectangle",
+      "ioValues": [
+        {
+          "name": "X_Length",
+          "ioValue": 10
+        },
+        {
+          "name": "Y_Length",
+          "ioValue": 10
+        },
+        {
+          "name": "Radius",
+          "ioValue": 2
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-513",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0254,
+          "y": 0.1538,
+          "uniqueID": "id-514",
+          "name": "X_Length",
+          "options": []
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0254,
+          "y": 0.2462,
+          "uniqueID": "id-515",
+          "name": "Y_Length",
+          "options": []
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0254,
+          "y": 0.3385,
+          "uniqueID": "id-516",
+          "name": "Radius",
+          "options": []
+        },
+        {
+          "atomType": "Code",
+          "x": 0.496,
+          "y": 0.6379,
+          "uniqueID": "id-517",
+          "ioValues": [
+            {
+              "name": "width",
+              "ioValue": 10
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            },
+            {
+              "name": "cornerRadius",
+              "ioValue": 2
+            }
+          ],
+          "interpreterVersion": 1,
+          "code": "function run(\n  width: number = 40,\n  height: number = 30,\n  cornerRadius: number = 5,\n): Assembly {\n  // Create a 2D rounded rectangle sketch\n  const roundedRect = replicad.drawRoundedRectangle(width, height, cornerRadius);\n\n  return new Assembly({\n    geometry: roundedRect,\n    tags: [\"rounded-rectangle\", \"2d\"],\n    bom: [`Rounded rectangle ${width}×${height} mm, r=${cornerRadius} mm`],\n  });\n}",
+          "compiledCode": "\"use strict\";\nfunction run(width = 40, height = 30, cornerRadius = 5) {\n    // Create a 2D rounded rectangle sketch\n    const roundedRect = replicad.drawRoundedRectangle(width, height, cornerRadius);\n    return new Assembly({\n        geometry: roundedRect,\n        tags: [\"rounded-rectangle\", \"2d\"],\n        bom: [`Rounded rectangle ${width}×${height} mm, r=${cornerRadius} mm`],\n    });\n}\n"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "width",
+          "ap1ID": "id-514",
+          "ap2ID": "id-517"
+        },
+        {
+          "ap2Name": "height",
+          "ap1ID": "id-515",
+          "ap2ID": "id-517"
+        },
+        {
+          "ap2Name": "cornerRadius",
+          "ap1ID": "id-516",
+          "ap2ID": "id-517"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-517",
+          "ap2ID": "id-513"
+        }
+      ],
+      "parentRepo": {
+        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Rounded_Rectangle/master/project.abundance?sanitize=true",
+        "dateCreated": "2026-06-24T22:02:13Z",
+        "dateModified": "2026-06-24T22:04:58Z",
+        "description": "Creates a 2D rectangle with rounded corners ",
+        "forks": 0,
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/BarbourSmith/Rounded_Rectangle",
+        "lastFoundGit": "2026-11-09T18:23:39.053Z",
+        "likes": 0,
+        "owner": "BarbourSmith",
+        "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Rounded_Rectangle/master/project.png?sanitize=true",
+        "privateRepo": false,
+        "pullRequests": [],
+        "ranking": 4,
+        "readme": "https://raw.githubusercontent.com/BarbourSmith/Rounded_Rectangle/master/README.md?sanitize=true",
+        "searchField": "rounded_rectangle barboursmith creates a 2d rectangle with rounded corners  ",
+        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Rounded_Rectangle/master/project.svg?sanitize=true",
+        "topMoleculeID": "",
+        "topics": [],
+        "userRanking": 0,
+        "userSetAsThumbnail": false,
+        "yyyy": 2026,
+        "repoName": "Rounded_Rectangle",
+        "isLocal": false
+      },
+      "unitsKey": "Unitless",
+      "fileTypeVersion": 1,
+      "scaleToProjectUnits": true,
+      "lastReloadedFromGithubAt": 1794275175624
+    },
+    {
+      "atomType": "Extrude",
+      "x": 0.703,
+      "y": 0.5859,
+      "uniqueID": "id-537",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "height",
+          "ioValue": 1
+        }
+      ]
+    },
+    {
+      "atomType": "Gcode",
+      "x": 0.7526,
+      "y": 0.8028,
+      "uniqueID": "id-541",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "Tool Size",
+          "ioValue": 6.35
+        },
+        {
+          "name": "Passes",
+          "ioValue": 1
+        },
+        {
+          "name": "Speed",
+          "ioValue": 1500
+        },
+        {
+          "name": "Cut Through",
+          "ioValue": 0
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "Aaron_Test",
+          "currentEquation": "Aaron_Test"
+        }
+      ],
+      "partName": "Aaron_Test",
+      "sortDirection": "Left"
+    }
+  ],
+  "allConnectors": [
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-500",
+      "ap2ID": "id-537"
+    },
+    {
+      "ap2Name": "remove",
+      "ap1ID": "id-504",
+      "ap2ID": "id-500"
+    },
+    {
+      "ap2Name": "retain",
+      "ap1ID": "id-518",
+      "ap2ID": "id-500"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-537",
+      "ap2ID": "id-484"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-537",
+      "ap2ID": "id-541"
+    }
+  ],
+  "unitsKey": "Inches",
+  "fileTypeVersion": 1,
+  "filetypeVersion": 1
 }
